@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&family=Syne:wght@700;800&display=swap');
+
+:root{
+  --primary-color: #2d0233;
+  --secondary-color: #100233;
+  --background-color: #050014;
+  --text-color: #ededed;
+  --highlight-color: #a054d6;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header-component {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 70px;
+  background: transparent;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+
+header-component.scrolled {
+  padding: 10px 40px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100dvh;
+  background: radial-gradient(var(--background-color), var(--secondary-color));
+  overflow: hidden;
+  z-index: 1;
+  padding: 120px 5vw;
+}
+
+.main-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.hero-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.callout{
+  font-family: 'Syne', sans-serif;
+  background-color: rgba(205, 205, 205, 0.1);
+  border: solid rgba(255, 255, 255, 0.200) 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: medium;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 100px;
+  color: var(--text-color);
+}
+
+.hero-wrapper > h1{
+  font-family: 'Syne', sans-serif;
+  max-width: 800px;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero-wrapper > p{
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  max-width: 800px;
+  font-size: clamp(1.125rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.800);
+}
+
+.highlight{
+  background: linear-gradient(135deg, #fff 30%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-wrapper{
+  font-family: 'Syne', sans-serif;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  max-width: fit-content;
+  gap: 10px;
+}
+
+.btn{
+  padding: 20px 25px;
+  border-radius: 10px;
+  border: solid rgba(255, 255, 255, 0.159) 1px;
+  background: linear-gradient(135deg, var(--primary-color) 30%, #a054d6 100%);
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.btn:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(160, 84, 214, 0.3);
+}
+
+.next{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(205, 205, 205, 0.1);
+  border: solid rgba(255, 255, 255, 0.200) 1px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.next p{
+  font-size: 2rem;
+}
+
+.next h2{
+  font-size: 1rem;  
+}
+
+.next span{
+  opacity: 0.5;
+}
+
+.avivamento-card{
+  font-family: 'Syne', sans-serif;
+  max-width: 400px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  background-color: rgba(205, 205, 205, 0.1);
+  border: solid rgba(255, 255, 255, 0.200) 1px;
+  padding: 30px 50px;
+}
+
+.avivamento-card .emoji{
+  font-size: 4rem;
+  opacity: 1;
+}
+
+.avivamento-card p{
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.orbee1, .orbee2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  margin-left: 100px;
+  width: 500px;
+  height: 400px;
+  opacity: 0.3;
+}
+
+.orbee1 {
+  top: -100px;
+  left: -100px;
+  background-color: #7c48ff;
+}
+
+.orbee2 {
+  bottom: -100px;
+  right: -100px;
+  background-color: #ff48a5; 
+}
+
+.hero > *:not(.orbee1):not(.orbee2) {
+  position: relative;
+  z-index: 2;
+}
+
+.cards{
+  height: 100dvh;
+}
