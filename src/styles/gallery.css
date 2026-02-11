@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&family=Syne:wght@700;800&display=swap');
+
+:root {
+  --primary: #2d0233;
+  --accent: #a054d6;
+  --text: #ededed;
+}
+
+body {
+  background-color: #050014;
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.gallery-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* --- Efeitos de Fundo --- */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjA1Ii8+PC9zdmc+');
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-orbs-gallery {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.orb-g {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+}
+
+.orb-g-1 {
+  width: 500px;
+  height: 500px;
+  background: #7c48ff;
+  top: -100px;
+  right: -100px;
+}
+
+.orb-g-2 {
+  width: 600px;
+  height: 600px;
+  background: #ff48a5;
+  bottom: -100px;
+  left: -200px;
+}
+
+/* --- Container e Cabeçalho --- */
+.gallery-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 20px 60px;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.badge-glass {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  text-transform: uppercase;
+}
+
+.title-display {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  margin: 20px 0;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fff 30%, #a054d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  max-width: 500px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+/* --- Masonry Grid --- */
+.photo-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  grid-auto-flow: dense; /* Ajuda a preencher buracos com os tamanhos diferentes */
+}
+
+/* --- Photo Card (3D Tilt) --- */
+.photo-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px; /* Borda arredondada suave no container */
+  backdrop-filter: blur(10px);
+  
+  /* Configuração do 3D */
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+  transition: transform 0.1s ease-out; /* Movimento rápido */
+  cursor: pointer;
+}
+
+/* Estados de tamanho */
+.tall { grid-row: span 2; }
+.wide { grid-column: span 2; }
+
+/* Reset suave ao sair */
+.photo-card.reset {
+  transition: transform 0.5s ease;
+}
+
+.polaroid-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+  pointer-events: none; /* O mouse event é no pai */
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Syne', sans-serif;
+  padding: 0 5px;
+}
+
+.photo-caption p {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.sticker-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .photo-masonry {
+    grid-template-columns: 1fr;
+  }
+  .wide, .tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Animações de Entrada */
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.2s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

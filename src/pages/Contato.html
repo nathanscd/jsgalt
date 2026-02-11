@@ -1,20 +1,90 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juventude São Gerardo - Contato</title>
-  <link rel="stylesheet" href="/src/styles/global.css">
-</head>
-<body>
-  <header-component></header-component>
+<link rel="stylesheet" href="src/styles/contact.css">
 
+<div class="contact-wrapper">
+  <div class="ambient-orbs-contact">
+    <div class="orb-c orb-c-1"></div>
+    <div class="orb-c orb-c-2"></div>
+  </div>
 
+  <main class="contact-container">
+    <section class="contact-info fade-up">
+      <div class="info-header">
+        <span class="badge-glass">FALE CONOSCO</span>
+        <h1 class="title-display">
+          VAMOS <br/>
+          <span class="gradient-text">CONECTAR</span>
+        </h1>
+        <p class="description">
+          Quer tirar dúvidas, pedir oração ou fazer parte da equipe?
+          A gente quer te ouvir. O Espírito sopra onde quer, e talvez ele tenha soprado você até aqui.
+        </p>
+      </div>
 
-  <footer-component></footer-component>
-</html>
-<script src="/src/script/Header.js"></script>
-<script src="/src/script/Footer.js"></script>
-<script src="/src/script/ClassChange.js"></script>
-</body>
-</html>
+      <div class="social-grid">
+        <a href="https://instagram.com/juventudesaogerardo" target="_blank" class="social-card instagram">
+          <div class="icon">📸</div>
+          <div class="social-text">
+            <span>@juventudesaogerardo</span>
+          </div>
+          <div class="arrow">↗</div>
+        </a>
+        <a href="#" class="social-card location">
+          <div class="icon">📍</div>
+          <div class="social-text">
+            <span>Igreja São Gerardo</span>
+            <small>Av. Bezerra de Menezes, 1256</small>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact-form-section fade-up delay-100">
+      <div class="glass-form-card">
+        
+        <form id="contactForm">
+          <h3 class="form-title">Mande sua mensagem</h3>
+          
+          <div class="input-group">
+            <label>Seu Nome</label>
+            <input type="text" placeholder="Como você gosta de ser chamado?" required />
+          </div>
+
+          <div class="input-group">
+            <label>WhatsApp / Email</label>
+            <input type="text" placeholder="Pra gente te responder" required />
+          </div>
+
+          <div class="input-group">
+            <label>Assunto</label>
+            <div class="select-wrapper">
+              <select required>
+                <option value="" disabled selected>Sobre o que vamos falar?</option>
+                <option value="prayer">Pedido de Oração 🙏</option>
+                <option value="info">Dúvida sobre o Grupo ❔</option>
+                <option value="join">Quero Servir 🔥</option>
+                <option value="other">Outro Assunto ✉️</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Sua Mensagem</label>
+            <textarea rows="4" placeholder="Abra seu coração..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-glow" id="submitBtn">
+            <span class="btn-text">ENVIAR MENSAGEM</span>
+            <div class="btn-shine"></div>
+          </button>
+        </form>
+
+        <div id="successMessage" class="success-state" style="display: none;">
+          <div class="success-icon">✨</div>
+          <h2>Mensagem Enviada!</h2>
+          <p>Alguém da nossa equipe vai entrar em contato (ou rezar por você) em breve.</p>
+          <button id="resetBtn" class="btn-reset">Enviar outra</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

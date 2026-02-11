@@ -5,6 +5,27 @@ class Header extends HTMLElement {
   }
 
   connectedCallback() {
+    this.render();
+    this.setupNavigation();
+  }
+
+  setupNavigation() {
+    const links = this.shadowRoot.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        
+        // Atualiza a URL sem recarregar a página
+        window.history.pushState(null, null, href);
+        
+        // Dispara um evento customizado para o seu router.js saber que a rota mudou
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      });
+    });
+  }
+
+  render() {
     this.shadowRoot.innerHTML = `
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&family=Syne:wght@700;800&display=swap');
@@ -44,6 +65,7 @@ class Header extends HTMLElement {
           margin-left: 0;
           margin-right: auto;
           color: #ededed; 
+          cursor: pointer;
         }
 
         .nav-link {
@@ -82,12 +104,12 @@ class Header extends HTMLElement {
         }
       </style>
 
-      <h1 class="Title">Juventude São Gerardo</h1>
-      <a href="/src/pages/LandingPage.html" class="nav-link" data-replace="Início"><span>Início</span></a>
-      <a href="/src/pages/We.html" class="nav-link" data-replace="Quem Somos"><span>Quem Somos</span></a>
-      <a href="/src/pages/Events.html" class="nav-link" data-replace="Eventos"><span>Eventos</span></a>
-      <a href="/src/pages/Fotos.html" class="nav-link" data-replace="Fotos"><span>Fotos</span></a>
-      <a href="/src/pages/Contato.html" class="nav-link" data-replace="Contato"><span>Contato</span></a>
+      <h1 class="Title" onclick="window.history.pushState(null, null, '/'); window.dispatchEvent(new PopStateEvent('popstate'));">Juventude São Gerardo</h1>
+      <a href="#/" class="nav-link" data-replace="Início"><span>Início</span></a>
+      <a href="#/about" class="nav-link" data-replace="Quem Somos"><span>Quem Somos</span></a>
+      <a href="#/events" class="nav-link" data-replace="Eventos"><span>Eventos</span></a>
+      <a href="#/gallery" class="nav-link" data-replace="Fotos"><span>Fotos</span></a>
+      <a href="#/contact" class="nav-link" data-replace="Contato"><span>Contato</span></a>
     `;
   }
 }

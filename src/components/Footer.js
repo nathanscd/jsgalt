@@ -30,9 +30,9 @@ class Footer extends HTMLElement {
         }
 
         .brand {
-          font-family: 'Syne', sans-serif;
+          font-family: 'Arial', sans-serif;
           font-weight: 800;
-          font-size: 1.2rem;
+          font-size: 1rem;
           text-transform: uppercase;
           letter-spacing: -0.5px;
         }
@@ -61,11 +61,12 @@ class Footer extends HTMLElement {
 
         span {
           color: #a054d6;
+          opacity: 0.8;
         }
       </style>
 
       <div class="footer-container">
-        <div class="brand">Juventude <span>São Gerardo</span></div>
+        <div class="brand">2026 JSG • "Temos de ir atras das pessoas, porque elas podem ter fome de comida ou de amizade" <br> <span>Santa Teresa de Calcutá</span></div>
         
         <div class="links">
           <a href="#">Instagram</a>

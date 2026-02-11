@@ -1,20 +1,92 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juventude São Gerardo - Junte-Se</title>
-  <link rel="stylesheet" href="/src/styles/global.css">
-</head>
-<body>
-  <header-component></header-component>
+<link rel="stylesheet" href="src/styles/gallery.css">
 
+<div class="gallery-wrapper">
+  <div class="noise-overlay"></div>
+  
+  <div class="ambient-orbs-gallery">
+    <div class="orb-g orb-g-1"></div>
+    <div class="orb-g orb-g-2"></div>
+  </div>
 
+  <main class="gallery-container">
+    <section class="gallery-header fade-up">
+      <span class="badge-glass">NOSSA HISTÓRIA</span>
+      <h1 class="title-display">
+        MURAL DE <br/>
+        <span class="gradient-text">MEMÓRIAS</span>
+      </h1>
+      <p class="description">
+        Cada clique, um testemunho. Reviva os momentos onde o céu tocou a terra.
+      </p>
+    </section>
 
-  <footer-component></footer-component>
-</html>
-<script src="/src/script/Header.js"></script>
-<script src="/src/script/Footer.js"></script>
-<script src="/src/script/ClassChange.js"></script>
-</body>
-</html>
+    <section class="photo-masonry fade-up delay-100">
+      
+      <div class="photo-card glass-polaroid">
+        <div class="polaroid-inner">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop" alt="Retiro 2024" loading="lazy" />
+            <div class="overlay-glow"></div>
+          </div>
+          <div class="photo-caption">
+            <p>Retiro de Carnaval 2024</p>
+            <span class="sticker-icon">✨</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card glass-polaroid tall">
+        <div class="polaroid-inner">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop" alt="Adoração" loading="lazy" />
+            <div class="overlay-glow"></div>
+          </div>
+          <div class="photo-caption">
+            <p>Noite de Adoração</p>
+            <span class="sticker-icon">🔥</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card glass-polaroid wide">
+        <div class="polaroid-inner">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop" alt="Grupo Jovem" loading="lazy" />
+            <div class="overlay-glow"></div>
+          </div>
+          <div class="photo-caption">
+            <p>Ação Social de Natal</p>
+            <span class="sticker-icon">❤️</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card glass-polaroid">
+        <div class="polaroid-inner">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop" alt="Música" loading="lazy" />
+            <div class="overlay-glow"></div>
+          </div>
+          <div class="photo-caption">
+            <p>Ministério de Música</p>
+            <span class="sticker-icon">🎵</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card glass-polaroid tall">
+        <div class="polaroid-inner">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1621251336069-45e0d37e2960?q=80&w=2070&auto=format&fit=crop" alt="Santa Missa" loading="lazy" />
+            <div class="overlay-glow"></div>
+          </div>
+          <div class="photo-caption">
+            <p>Santa Missa Jovem</p>
+            <span class="sticker-icon">🙏</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</div>
