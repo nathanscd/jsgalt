@@ -8,11 +8,9 @@
 </head>
 <body>
   <header-component></header-component>
-  
   <section class="hero">
-    <div class="orbee1"></div>
-    <div class="orbee2"></div>
-
+   <div class="orbee1"></div>
+   <div class="orbee2"></div>
     <div class="main-wrapper">
       <div class="hero-wrapper">
         <span class="callout">Juventude São Gerardo • Desde 2024</span>
@@ -21,7 +19,7 @@
         
         <div class="btn-wrapper">
           <a href="/src/pages/JoinUs.html" class="btn">Quero participar</a>
-          <div class="next"><p>🗓️</p><h2> Próximo Encontro <br><span>Sábado às 16:30h</span></h2></div>
+          <div class="next"><p>🗓️</p><h2> Próximo Encontro <br><span>Domingo às 16:30h</span></h2></div>
         </div>
       </div>
       <div class="avivamento-card">
@@ -32,16 +30,37 @@
     </div>
   </section>
 
-  <section class="cards">
-    <div class="card">
-      <img src="/src/assets/images/EncontrosSemanais.jpg" alt="Encontros Semanais">
-      <h3>Encontros Semanais</h3>
-      <p>Venha viver momentos de adoração, ensino e comunhão toda semana. Juntos, crescendo na fé e no amor por Jesus.</p>
-    </div>
-  </section>
+  <div class="pilars">
+    <h1>Nossos Pilares</h1>
+    <p>O que sustenta nossa caminhada</p>
+    <section class="cards-section">
+      <div class="card main-card" id="card1">
+        <div class="card-content">
+          <h3>Nossa História</h3>
+          <p>Conheça como tudo começou.</p>
+        </div>
+      </div>
+
+      <div class="card small-card" id="card2">
+        <div class="card-content">
+          <h3>Galeria</h3>
+          <p>Momentos inesquecíveis.</p>
+        </div>
+      </div>
+
+      <div class="card small-card" id="card3">
+        <div class="card-content">
+          <h3>Agenda</h3>
+          <p>Não perca nada.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  
 
   <footer-component></footer-component>
 </body>
 <script src="/src/script/Header.js"></script>
+<script src="/src/script/Footer.js"></script>
 <script src="/src/script/ClassChange.js"></script>
 </html>

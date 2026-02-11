@@ -84,10 +84,10 @@ class Header extends HTMLElement {
 
       <h1 class="Title">Juventude São Gerardo</h1>
       <a href="/src/pages/LandingPage.html" class="nav-link" data-replace="Início"><span>Início</span></a>
-      <a href="/src/pages/About.html" class="nav-link" data-replace="Quem Somos"><span>Quem Somos</span></a>
+      <a href="/src/pages/We.html" class="nav-link" data-replace="Quem Somos"><span>Quem Somos</span></a>
       <a href="/src/pages/Events.html" class="nav-link" data-replace="Eventos"><span>Eventos</span></a>
-      <a href="/src/pages/Gallery.html" class="nav-link" data-replace="Fotos"><span>Fotos</span></a>
-      <a href="/src/pages/Contact.html" class="nav-link" data-replace="Contato"><span>Contato</span></a>
+      <a href="/src/pages/Fotos.html" class="nav-link" data-replace="Fotos"><span>Fotos</span></a>
+      <a href="/src/pages/Contato.html" class="nav-link" data-replace="Contato"><span>Contato</span></a>
     `;
   }
 }

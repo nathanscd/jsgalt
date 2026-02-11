@@ -18,7 +18,7 @@ body{
   margin: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
   padding: 0;
-  background-color: var(--background-color);
+  background: radial-gradient(var(--background-color), var(--secondary-color));
   color: var(--text-color);
 }
 
@@ -49,7 +49,6 @@ header-component.scrolled {
   flex-direction: column;
   justify-content: center;
   height: 100dvh;
-  background: radial-gradient(var(--background-color), var(--secondary-color));
   overflow: hidden;
   z-index: 1;
   padding: 120px 5vw;
@@ -160,19 +159,34 @@ header-component.scrolled {
   opacity: 0.5;
 }
 
-.avivamento-card{
+.avivamento-card {
   font-family: 'Syne', sans-serif;
-  max-width: 400px;
+  max-width: 350px;
   width: fit-content;
   height: fit-content;
   border-radius: 20px;
-  background-color: rgba(205, 205, 205, 0.1);
   border: solid rgba(255, 255, 255, 0.200) 1px;
-  padding: 30px 50px;
+  padding: 35px 40px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.avivamento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(380deg, rgba(205, 205, 205, 0.1) 80%, #10023313 20%);
+  filter: blur(40px);
+  z-index: -1;
+  transform: scale(1.2);
 }
 
 .avivamento-card .emoji{
-  font-size: 4rem;
+  font-size: 3.5rem;
   opacity: 1;
 }
 
@@ -199,7 +213,7 @@ header-component.scrolled {
 }
 
 .orbee2 {
-  bottom: -100px;
+  bottom: 200px;
   right: -100px;
   background-color: #ff48a5; 
 }
@@ -209,6 +223,112 @@ header-component.scrolled {
   z-index: 2;
 }
 
-.cards{
-  height: 100dvh;
+.pilars{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pilars > h1{
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem;
+  margin-top: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.pilars > p{
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.800);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background: transparent;
+  gap: 20px;
+  height: 80vh; 
+  padding: 50px 5vw;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: grayscale(100%);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.main-card {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.main-card h3 {
+  font-size: 2.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4);
+  filter: grayscale(0);
+}
+
+.card:hover::before {
+  opacity: 0.8;
+}
+
+#card1 {
+  background-image: url('https://storage.googleapis.com/media_files_prod/uploads/page/None/page-9ba2c7fba90cfda93ea8d2838c36de29.jpg');
+}
+
+#card2 {
+  background-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop');
+}
+
+#card3 {
+  background-image: url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=2070&auto=format&fit=crop');
 }
